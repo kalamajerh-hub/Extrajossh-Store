@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXTRAJOSSH - Jasa Sebar LPM & LPFP Profesional</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0A192F',
+                            dark: '#050D1A',
+                            light: '#172A45'
+                        },
+                        boxingRed: {
+                            DEFAULT: '#DC2626',
+                            dark: '#B91C1C',
+                            light: '#EF4444'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Google & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-boxing { font-family: 'Teko', sans-serif; letter-spacing: 0.05em; }
+        .boxing-pattern {
+            background-image: radial-gradient(#DC2626 0.75px, transparent 0.75px), radial-gradient(#0A192F 0.75px, #0A192F 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-navy-dark text-slate-100 min-h-screen flex flex-col selection:bg-boxingRed selection:text-white">
+
+    <!-- HEADER / NAVIGASI -->
+    <header class="bg-navy border-b border-slate-800 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchPage('beranda')">
+                <div class="bg-boxingRed text-white p-2.5 rounded-lg shadow-md transform -rotate-3 hover:rotate-0 transition">
+                    <i class="fa-solid fa-hand-fist text-2xl"></i>
+                </div>
+                <div>
+                    <span class="font-boxing text-3xl tracking-wider text-white font-bold block leading-none">EXTRA<span class="text-boxingRed">JOSSH</span></span>
+                    <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Jaseb LPM & LPFP Elite</span>
+                </div>
+            </div>
+
+            <!-- Navigasi Desktop -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold">
+                <button onclick="switchPage('beranda')" class="nav-btn text-boxingRed hover:text-boxingRed-light transition" data-target="beranda">Beranda</button>
+                <button onclick="switchPage('kalkulator')" class="nav-btn text-slate-300 hover:text-boxingRed transition" data-target="kalkulator">Kalkulator</button>
+                <button onclick="switchPage('pricelist')" class="nav-btn text-slate-300 hover:text-boxingRed transition" data-target="pricelist">Price List</button>
+                <button onclick="switchPage('kasir')" class="nav-btn text-slate-300 hover:text-boxingRed transition" data-target="kasir">Daftar Kasir</button>
+                <button onclick="switchPage('login')" class="bg-boxingRed hover:bg-boxingRed-dark text-white px-4 py-2 rounded-lg transition shadow-md flex items-center space-x-2">
+                    <i class="fa-solid fa-lock text-xs"></i>
+                    <span>Login Owner</span>
+                </button>
+            </nav>
+
+            <!-- Tombol Mobile Menu -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-slate-300 hover:text-white text-2xl">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-light border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <button onclick="switchPage('beranda'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded hover:bg-navy font-semibold">Beranda</button>
+            <button onclick="switchPage('kalkulator'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded hover:bg-navy font-semibold">Kalkulator Pesanan</button>
+            <button onclick="switchPage('pricelist'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded hover:bg-navy font-semibold">Price List</button>
+            <button onclick="switchPage('kasir'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded hover:bg-navy font-semibold">Daftar Kasir</button>
+            <button onclick="switchPage('login'); toggleMobileMenu();" class="block w-full text-left py-2 px-3 rounded bg-boxingRed text-white font-semibold">Login Owner</button>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="flex-grow">
+
+        <!-- 1. HALAMAN BERANDA -->
+        <section id="page-beranda" class="page-section py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-boxingRed/10 border border-boxingRed/30 px-3 py-1.5 rounded-full text-boxingRed text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>The Ultimate Broadcasting Ring</span>
+                    </div>
+                    <h1 class="font-boxing text-6xl sm:text-7xl font-extrabold tracking-wide leading-none text-white">
+                        DOMINASI <span class="text-boxingRed">TELEGRAM</span> DENGAN KEKUATAN MAKSIMAL
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg">
+                        Layanan sebar LPM dan LPFP profesional berstandar juara. Cepat, akurat, aman, dan tanpa celah untuk melesatkan bisnis atau komunitas Anda di ring Telegram.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <button onclick="switchPage('kalkulator')" class="bg-boxingRed hover:bg-boxingRed-dark text-white font-bold px-8 py-3.5 rounded-xl transition shadow-lg transform hover:-translate-y-0.5 flex items-center space-x-3 text-lg font-boxing tracking-wider">
+                            <span>BUAT PESANAN SEKARANG</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="switchPage('pricelist')" class="bg-navy-light hover:bg-slate-800 text-white font-bold px-8 py-3.5 rounded-xl border border-slate-700 transition font-boxing tracking-wider text-lg">
+                            LIHAT PRICE LIST
+                        </button>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-boxingRed to-blue-600 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+                    <div class="relative bg-navy-light border border-slate-700 p-8 rounded-2xl shadow-2xl w-full max-w-md text-center space-y-6">
+                        <div class="w-20 h-20 bg-boxingRed/20 text-boxingRed rounded-2xl mx-auto flex items-center justify-center text-4xl border border-boxingRed/40">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <h3 class="font-boxing text-3xl font-bold tracking-wider">STATISTIK JUARA</h3>
+                        <div class="grid grid-cols-2 gap-4 text-left">
+                            <div class="bg-navy p-4 rounded-xl border border-slate-800">
+                                <span class="text-2xl font-bold text-boxingRed font-boxing block">100%</span>
+                                <span class="text-xs text-slate-400">Akurat & On Time</span>
+                            </div>
+                            <div class="bg-navy p-4 rounded-xl border border-slate-800">
+                                <span class="text-2xl font-bold text-boxingRed font-boxing block">14 Hari</span>
+                                <span class="text-xs text-slate-400">Durasi Maksimal</span>
+                            </div>
+                        </div>
+                        <button onclick="switchPage('kasir')" class="w-full bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 rounded-xl transition border border-slate-700 flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-green-500 text-lg"></i>
+                            <span>Hubungi Kasir Aktif</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. HALAMAN KALKULATOR PESANAN -->
+        <section id="page-kalkulator" class="page-section hidden py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="mb-8 text-center">
+                <h2 class="font-boxing text-5xl font-bold tracking-wider text-white">KALKULATOR & FORMULIR PESANAN</h2>
+                <p class="text-slate-400 text-sm">Hitung tarif otomatis, deteksi inrush, dan salin format pesanan Anda dengan mudah.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Form Input (7 Kolom) -->
+                <div class="lg:col-span-7 bg-navy-light border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6">
+                    <h3 class="font-boxing text-2xl font-bold text-boxingRed border-b border-slate-800 pb-3 flex items-center space-x-2">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>PARAMETER PESANAN</span>
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Nama List / Channel</label>
+                            <input type="text" id="input-nama-list" placeholder="Contoh: Channel Official" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-boxingRed transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Nomor Customer (WhatsApp)</label>
+                            <input type="text" id="input-nomor" placeholder="Contoh: 08123456789" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-boxingRed transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Jenis Layanan</label>
+                            <select id="input-layanan" onchange="hitungPesanan()" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-boxingRed transition">
+                                <option value="LPM">Jaseb LPM</option>
+                                <option value="LPFP">Jaseb LPFP</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label id="label-jumlah" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Jumlah LPM (Bebas Input)</label>
+                            <input type="number" id="input-jumlah" value="100" min="1" oninput="hitungPesanan()" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-boxingRed transition">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Berapa Hari (Maks 14)</label>
+                            <input type="number" id="input-hari" value="1" min="1" max="14" oninput="hitungPesanan()" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-boxingRed transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Berapa Sesi (Maks 3)</label>
+                            <select id="input-sesi" onchange="updateSesiFields(); hitungPesanan();" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-boxingRed transition">
+                                <option value="1">1 Sesi</option>
+                                <option value="2">2 Sesi</option>
+                                <option value="3">3 Sesi</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Jadwal Sesi -->
+                    <div class="space-y-3 pt-2">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300">Jam Mulai & Selesai Sesi (WIB)</label>
+                        <div id="sesi-container" class="space-y-2">
+                            <div class="flex items-center space-x-2 bg-navy p-2 rounded-xl border border-slate-800">
+                                <span class="text-xs font-semibold text-boxingRed w-16">Sesi 1</span>
+                                <input type="time" id="mulai-1" value="08:00" onchange="hitungPesanan()" class="bg-navy-light border border-slate-700 rounded px-2 py-1 text-xs text-white">
+                                <span class="text-slate-400">—</span>
+                                <input type="time" id="selesai-1" value="10:00" onchange="hitungPesanan()" class="bg-navy-light border border-slate-700 rounded px-2 py-1 text-xs text-white">
+                                <span class="text-[10px] text-slate-400">WIB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Jenis Screenshot</label>
+                            <select id="input-screenshot" onchange="hitungPesanan()" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-boxingRed transition">
+                                <option value="Pendek">Pendek (Gratis)</option>
+                                <option value="Panjang">Panjang (Gratis)</option>
+                                <option value="Record">Record (+100P)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Deadline Pengerjaan</label>
+                            <input type="datetime-local" id="input-deadline" onchange="hitungPesanan()" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-boxingRed transition">
+                        </div>
+                    </div>
+
+                    <!-- Pilihan Layanan Tambahan -->
+                    <div class="space-y-3 pt-2">
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300">Layanan Tambahan</label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <label class="flex items-center space-x-2 bg-navy p-3 rounded-xl border border-slate-800 cursor-pointer hover:border-boxingRed transition">
+                                <input type="checkbox" id="add-poster" onchange="hitungPesanan()" class="accent-boxingRed rounded">
+                                <span class="text-xs font-semibold">Poster (+100P)</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-navy p-3 rounded-xl border border-slate-800 cursor-pointer hover:border-boxingRed transition">
+                                <input type="checkbox" id="add-video" onchange="hitungPesanan()" class="accent-boxingRed rounded">
+                                <span class="text-xs font-semibold">Video (+150P)</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-navy p-3 rounded-xl border border-slate-800 cursor-pointer hover:border-boxingRed transition">
+                                <input type="checkbox" id="add-store" onchange="hitungPesanan()" class="accent-boxingRed rounded">
+                                <span class="text-xs font-semibold">Store (+200P)</span>
+                            </label>
+                            <label class="flex items-center space-x-2 bg-navy p-3 rounded-xl border border-slate-800 cursor-pointer hover:border-boxingRed transition">
+                                <input type="checkbox" id="add-18" onchange="hitungPesanan()" class="accent-boxingRed rounded">
+                                <span class="text-xs font-semibold">18+ (+100P)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Keterangan Tambahan</label>
+                        <textarea id="input-keterangan" placeholder="Keterangan khusus jika ada..." oninput="hitungPesanan()" rows="2" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-boxingRed transition resize-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- Pratinjau & Hasil (5 Kolom) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-navy-light border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-xl space-y-6 sticky top-28">
+                        <h3 class="font-boxing text-2xl font-bold text-white border-b border-slate-800 pb-3 flex items-center justify-between">
+                            <span>PRATINJAU FORMAT</span>
+                            <span id="badge-inrush" class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full font-sans">Inrush: Tidak</span>
+                        </h3>
+
+                        <!-- Kotak Format Teks Asli -->
+                        <div class="bg-navy p-4 rounded-xl border border-slate-800 font-mono text-xs text-slate-300 whitespace-pre-wrap leading-relaxed max-h-72 overflow-y-auto" id="output-format">
+                            Memuat format pesanan...
+                        </div>
+
+                        <!-- Rincian Total Harga -->
+                        <div class="bg-navy p-4 rounded-xl border border-slate-800 space-y-2">
+                            <div class="flex justify-between text-sm text-slate-400">
+                                <span>Harga Dasar:</span>
+                                <span id="rincian-dasar" class="text-white font-semibold">0P</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-slate-400">
+                                <span>Layanan Tambahan:</span>
+                                <span id="rincian-tambahan" class="text-white font-semibold">0P</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-slate-400">
+                                <span>Biaya Inrush:</span>
+                                <span id="rincian-inrush" class="text-white font-semibold">0P</span>
+                            </div>
+                            <div class="border-t border-slate-800 pt-2 flex justify-between items-center">
+                                <span class="font-bold text-white font-boxing text-xl tracking-wider">TOTAL PEMBAYARAN:</span>
+                                <span id="rincian-total" class="font-bold text-boxingRed font-boxing text-2xl tracking-wider">0P</span>
+                            </div>
+                        </div>
+
+                        <!-- Tombol Aksi -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <button onclick="salinFormat()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition text-xs flex items-center justify-center space-x-2 font-boxing tracking-wider text-base">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>SALIN FORMAT</span>
+                            </button>
+                            <button onclick="salinTotal()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition text-xs flex items-center justify-center space-x-2 font-boxing tracking-wider text-base">
+                                <i class="fa-solid fa-receipt"></i>
+                                <span>SALIN TOTAL</span>
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button onclick="resetForm()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-2.5 rounded-xl transition text-xs">
+                                <i class="fa-solid fa-rotate-right mr-1"></i> Reset
+                            </button>
+                            <button onclick="switchPage('kasir')" class="bg-boxingRed hover:bg-boxingRed-dark text-white font-bold py-2.5 rounded-xl transition text-xs flex items-center justify-center space-x-1">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <span>Hubungi Kasir</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HALAMAN PRICE LIST -->
+        <section id="page-pricelist" class="page-section hidden py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12">
+            <div class="text-center">
+                <h2 class="font-boxing text-5xl font-bold tracking-wider text-white">PRICE LIST RESMI EXTRAJOSSH</h2>
+                <p class="text-slate-400 text-sm">Tarif transparan dan kompetitif untuk hasil sebar maksimal.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tabel LPM -->
+                <div class="bg-navy-light border border-slate-800 p-6 rounded-2xl shadow-xl space-y-4">
+                    <h3 class="font-boxing text-2xl font-bold text-boxingRed flex items-center space-x-2">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <span>PRICE LIST JASEB LPM (Per 1× Sebar/Hari)</span>
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-navy text-slate-400 font-semibold border-b border-slate-800">
+                                <tr>
+                                    <th class="p-3">Jumlah LPM</th>
+                                    <th class="p-3 text-right">Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800/60" id="table-lpm">
+                                <!-- Data diisi JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tabel LPFP -->
+                <div class="bg-navy-light border border-slate-800 p-6 rounded-2xl shadow-xl space-y-4">
+                    <h3 class="font-boxing text-2xl font-bold text-boxingRed flex items-center space-x-2">
+                        <i class="fa-solid fa-rectangle-ad"></i>
+                        <span>PRICE LIST JASEB LPFP (Per 1× Sebar/Hari)</span>
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-navy text-slate-400 font-semibold border-b border-slate-800">
+                                <tr>
+                                    <th class="p-3">Jumlah LPFP</th>
+                                    <th class="p-3 text-right">Harga</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800/60" id="table-lpfp">
+                                <!-- Data diisi JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Harga Tambahan -->
+            <div class="bg-navy-light border border-slate-800 p-6 rounded-2xl shadow-xl space-y-4">
+                <h3 class="font-boxing text-2xl font-bold text-white">BIAYA & LAYANAN TAMBAHAN</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-navy text-slate-400 font-semibold border-b border-slate-800">
+                            <tr>
+                                <th class="p-3">Layanan</th>
+                                <th class="p-3 text-right">Biaya</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 text-slate-300">
+                            <tr><td class="p-3">Record</td><td class="p-3 text-right text-boxingRed font-semibold">+100P</td></tr>
+                            <tr><td class="p-3">List Store</td><td class="p-3 text-right text-boxingRed font-semibold">+200P</td></tr>
+                            <tr><td class="p-3">List Gambar / Poster</td><td class="p-3 text-right text-boxingRed font-semibold">+100P</td></tr>
+                            <tr><td class="p-3">List Video</td><td class="p-3 text-right text-boxingRed font-semibold">+150P</td></tr>
+                            <tr><td class="p-3">List 18+ / Grup Sex</td><td class="p-3 text-right text-boxingRed font-semibold">+100P</td></tr>
+                            <tr><td class="p-3">Pergantian list tambahan setelah pergantian pertama</td><td class="p-3 text-right text-boxingRed font-semibold">+100P per pergantian</td></tr>
+                            <tr><td class="p-3">Screenshot Pendek / Panjang</td><td class="p-3 text-right text-emerald-400 font-semibold">Gratis</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. HALAMAN DAFTAR KASIR -->
+        <section id="page-kasir" class="page-section hidden py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-8">
+            <div class="text-center">
+                <h2 class="font-boxing text-5xl font-bold tracking-wider text-white">DAFTAR KASIR RESMI</h2>
+                <p class="text-slate-400 text-sm">Pilih kasir yang sedang *Open* untuk memproses pesanan Anda langsung via WhatsApp.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="list-kasir-container">
+                <!-- Diisi JS -->
+            </div>
+        </section>
+
+        <!-- 5. HALAMAN LOGIN OWNER -->
+        <section id="page-login" class="page-section hidden py-16 px-4 sm:px-6 lg:px-8 max-w-md mx-auto">
+            <div class="bg-navy-light border border-slate-800 p-8 rounded-2xl shadow-2xl space-y-6">
+                <div class="text-center space-y-2">
+                    <div class="w-16 h-16 bg-boxingRed/20 text-boxingRed rounded-2xl mx-auto flex items-center justify-center text-3xl border border-boxingRed/40">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h2 class="font-boxing text-3xl font-bold tracking-wider text-white">LOGIN OWNER</h2>
+                    <p class="text-xs text-slate-400">Masukkan PIN atau password aman untuk mengakses panel operasional.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Password / PIN Owner</label>
+                        <input type="password" id="input-pin" placeholder="••••••••" class="w-full bg-navy border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-boxingRed transition">
+                    </div>
+                    <button onclick="prosesLogin()" class="w-full bg-boxingRed hover:bg-boxingRed-dark text-white font-bold py-3.5 rounded-xl transition font-boxing tracking-wider text-lg shadow-lg">
+                        MASUK PANEL OWNER
+                    </button>
+                    <p id="login-error" class="text-xs text-boxingRed text-center hidden font-semibold">PIN atau Password salah!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. DASHBOARD & PANEL OWNER (TERPROTEKSI) -->
+        <section id="page-dashboard" class="page-section hidden py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-navy-light border border-slate-800 p-6 rounded-2xl shadow-xl gap-4">
+                <div>
+                    <h2 class="font-boxing text-4xl font-bold text-white tracking-wide">PANEL OPERASIONAL OWNER</h2>
+                    <p class="text-xs text-slate-400">Kelola pesanan, tim, kasir, komisi, dan tarif secara real-time.</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button onclick="switchTabDashboard('pesanan')" class="dashboard-tab px-4 py-2 rounded-xl text-xs font-semibold bg-boxingRed text-white transition" data-tab="pesanan">Pesanan</button>
+                    <button onclick="switchTabDashboard('tim')" class="dashboard-tab px-4 py-2 rounded-xl text-xs font-semibold bg-navy text-slate-300 hover:bg-slate-800 transition" data-tab="tim">Tim & Komisi</button>
+                    <button onclick="switchTabDashboard('kasir-admin')" class="dashboard-tab px-4 py-2 rounded-xl text-xs font-semibold bg-navy text-slate-300 hover:bg-slate-800 transition" data-tab="kasir-admin">Kasir</button>
+                    <button onclick="switchPage('beranda')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-xl text-xs font-semibold transition">Logout</button>
+                </div>
+            </div>
+
+            <!-- Tab 1: Manajemen Pesanan -->
+            <div id="dash-pesanan" class="dash-content space-y-6">
+                <div class="bg-navy-light border border-slate-800 p-6 rounded-2xl shadow-xl space-y-4">
+                    <div class="flex justify-between items-center">
+                        <h3 class="font-boxing text-2xl font-bold text-white">DAFTAR PESANAN MASUK</h3>
+                        <span class="text-xs bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded-full font-semibold">Database Persisten Aktif</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-navy text-slate-400 font-semibold border-b border-slate-800">
+                                <tr>
+                                    <th class="p-3">ID</th>
+                                    <th class="p-3">Customer</th>
+                                    <th class="p-3">Layanan</th>
+                                    <th class="p-3">Jumlah</th>
+                                    <th class="p-3">Total Harga</th>
+                                    <th class="p-3">Inrush</th>
+                                    <th class="p-3">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800/60" id="table-owner-pesanan">
+                                <!-- Diisi JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Manajemen Tim & Komisi -->
+            <div id="dash-tim" class="dash-content hidden space-y-6">
+                <div class="bg-navy-light border border-slate-800 p-6 rounded-2xl shadow-xl space-y-4">
+                    <h3 class="font-boxing text-2xl font-bold text-white">KALKULATOR KOMISI & REKAP GAJI TIM</h3>
+                    <p class="text-xs text-slate-400">Kelola pembagian tugas tim, potongan Store (15%), dan potongan keterlambatan (30%).</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="bg-navy p-4 rounded-xl border border-slate-800 space-y-2">
+                            <span class="text-xs text-slate-400 uppercase font-semibold">Total Komisi Kotor</span>
+                            <h4 class="text-2xl font-bold font-boxing text-white">4.500P</h4>
+                        </div>
+                        <div class="bg-navy p-4 rounded-xl border border-slate-800 space-y-2">
+                            <span class="text-xs text-slate-400 uppercase font-semibold">Potongan Total</span>
+                            <h4 class="text-2xl font-bold font-boxing text-boxingRed">350P</h4>
+                        </div>
+                        <div class="bg-navy p-4 rounded-xl border border-slate-800 space-y-2">
+                            <span class="text-xs text-slate-400 uppercase font-semibold">Komisi Bersih Dibayar</span>
+                            <h4 class="text-2xl font-bold font-boxing text-emerald-400">4.150P</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Manajemen Kasir -->
+            <div id="dash-kasir-admin" class="dash-content hidden space-y-6">
+                <div class="bg-navy-light border border-slate-800 p-6 rounded-2xl shadow-xl space-y-4">
+                    <h3 class="font-boxing text-2xl font-bold text-white"> PENGATURAN STATUS KASIR</h3>
+                    <div class="space-y-3" id="admin-kasir-list">
+                        <!-- Diisi JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy border-t border-slate-800 py-8 text-center text-xs text-slate-500 space-y-2">
+        <p class="font-boxing text-xl tracking-wider text-slate-300">EXTRA<span class="text-boxingRed">JOSSH</span> — THE CHAMPION BROADCASTING SERVICE</p>
+        <p>&copy; 2026 EXTRAJOSSH. Hak Cipta Dilindungi Undang-Undang.</p>
+    </footer>
+
+    <!-- JAVASCRIPT APLIKASI -->
+    <script>
+        // Data Price List Resmi
+        const priceListLPM = [
+            { jml: 50, harga: 80 },
+            { jml: 100, harga: 160 },
+            { jml: 200, harga: 320 },
+            { jml: 300, harga: 480 },
+            { jml: 400, harga: 640 },
+            { jml: 500, harga: 800 },
+            { jml: 600, harga: 960 },
+            { jml: 700, harga: 1120 },
+            { jml: 800, harga: 1280 },
+            { jml: 900, harga: 1440 },
+            { jml: 1000, harga: 1600 },
+        ];
+
+        const priceListLPFP = [
+            { jml: 50, harga: 100 },
+            { jml: 100, harga: 200 },
+            { jml: 200, harga: 400 },
+            { jml: 300, harga: 600 },
+            { jml: 400, harga: 800 },
+            { jml: 500, harga: 1000 },
+        ];
+
+        // Data Kasir Aktif
+        let daftarKasir = [
+            { id: 1, nama: "Kasir Alex (Champion)", wa: "6281234567890", status: "Open" },
+            { id: 2, nama: "Kasir Tyson (Pro)", wa: "6289876543210", status: "Open" }
+        ];
+
+        // Data Pesanan Tersimpan (Database Simulasi Persisten)
+        let daftarPesanan = JSON.parse(localStorage.getItem('extrajossh_pesanan')) || [
+            { id: "EJ-9921", customer: "Budi Santoso", layanan: "LPM", jumlah: 500, total: 800, inrush: "Tidak", status: "Proses" }
+        ];
+
+        // Navigasi Antar Halaman
+        function switchPage(pageId) {
+            document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`page-${pageId}`).classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if(pageId === 'pricelist') renderPriceListTables();
+            if(pageId === 'kasir') renderKasirPublic();
+            if(pageId === 'dashboard') renderOwnerPesanan();
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Render Tabel Price List
+        function renderPriceListTables() {
+            const tbodyLpm = document.getElementById('table-lpm');
+            tbodyLpm.innerHTML = priceListLPM.map(item => `
+                <tr class="hover:bg-navy/50 transition">
+                    <td class="p-3 font-semibold">${item.jml.toLocaleString('id-ID')}</td>
+                    <td class="p-3 text-right text-boxingRed font-bold">${item.harga.toLocaleString('id-ID')}P</td>
+                </tr>
+            `).join('');
+
+            const tbodyLpfp = document.getElementById('table-lpfp');
+            tbodyLpfp.innerHTML = priceListLPFP.map(item => `
+                <tr class="hover:bg-navy/50 transition">
+                    <td class="p-3 font-semibold">${item.jml.toLocaleString('id-ID')}</td>
+                    <td class="p-3 text-right text-boxingRed font-bold">${item.harga.toLocaleString('id-ID')}P</td>
+                </tr>
+            `).join('');
+        }
+
+        // Render Daftar Kasir Publik
+        function renderKasirPublic() {
+            const container = document.getElementById('list-kasir-container');
+            container.innerHTML = daftarKasir.map(k => {
+                let isOpen = k.status === 'Open';
+                let btnClass = isOpen ? 'bg-boxingRed hover:bg-boxingRed-dark text-white cursor-pointer' : 'bg-slate-800 text-slate-500 cursor-not-allowed';
+                let waLink = isOpen ? `https://wa.me/${k.valWA || k.wa}?text=Halo%20${encodeURIComponent(k.nama)},%20saya%20ingin%20memesan%20layanan%20EXTRAJOSSH.` : '#';
+                return `
+                    <div class="bg-navy-light border border-slate-800 p-6 rounded-2xl shadow-xl flex items-center justify-between">
+                        <div class="space-y-1">
+                            <h3 class="font-boxing text-2xl font-bold text-white">${k.nama}</h3>
+                            <span class="inline-block text-xs px-2.5 py-0.5 rounded-full font-semibold ${isOpen ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'}">
+                                Status: ${k.status}
+                            </span>
+                        </div>
+                        <a href="${waLink}" target="${isOpen ? '_blank' : '_self'}" onclick="${isOpen ? '' : 'event.preventDefault()'}" class="${btnClass} px-6 py-3 rounded-xl font-bold transition flex items-center space-x-2 font-boxing text-lg tracking-wider">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>CHAT KASIR</span>
+                        </a>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Update Field Sesi Berdasarkan Pilihan
+        function updateSesiFields() {
+            const jumlahSesi = parseInt(document.getElementById('input-sesi').value);
+            const container = document.getElementById('sesi-container');
+            let html = '';
+            for(let i=1; i<=jumlahSesi; i++) {
+                let defaultMulai = i === 1 ? '08:00' : (i === 2 ? '13:00' : '19:00');
+                let defaultSelesai = i === 1 ? '10:00' : (i === 2 ? '15:00' : '21:00');
+                html += `
+                    <div class="flex items-center space-x-2 bg-navy p-2 rounded-xl border border-slate-800">
+                        <span class="text-xs font-semibold text-boxingRed w-16">Sesi ${i}</span>
+                        <input type="time" id="mulai-${i}" value="${defaultMulai}" onchange="hitungPesanan()" class="bg-navy-light border border-slate-700 rounded px-2 py-1 text-xs text-white">
+                        <span class="text-slate-400">—</span>
+                        <input type="time" id="selesai-${i}" value="${defaultSelesai}" onchange="hitungPesanan()" class="bg-navy-light border border-slate-700 rounded px-2 py-1 text-xs text-white">
+                        <span class="text-[10px] text-slate-400">WIB</span>
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+        }
+
+        // Kalkulator Harga & Deteksi Inrush Otomatis
+        function hitungPesanan() {
+            const layanan = document.getElementById('input-layanan').value;
+            const jumlah = parseInt(document.getElementById('input-jumlah').value) || 0;
+            const hari = parseInt(document.getElementById('input-hari').value) || 1;
+            const sesi = parseInt(document.getElementById('input-sesi').value) || 1;
+            const screenshot = document.getElementById('input-screenshot').value;
+
+            // Ubah label jumlah
+            document.getElementById('label-jumlah').innerText = `Jumlah ${layanan} (Bebas Input)`;
+
+            // Hitung harga dasar berdasarkan price list atau custom proporsional
+            let baseRate1x = 0;
+            const listRef = layanan === 'LPM' ? priceListLPM : priceListLPFP;
+            const exactMatch = listRef.find(item => item.jml === jumlah);
+            if (exactMatch) {
+                baseRate1x = exactMatch.harga;
+            } else {
+                // Tarif proporsional untuk jumlah custom
+                const unitRate = layanan === 'LPM' ? 1.6 : 2.0;
+                baseRate1x = Math.round(jumlah * unitRate);
+            }
+
+            let hargaDasar = baseRate1x * hari * sesi;
+
+            // Layanan Tambahan
+            let tambahan = 0;
+            if(screenshot === 'Record') tambahan += 100;
+            if(document.getElementById('add-poster').checked) tambahan += 100;
+            if(document.getElementById('add-video').checked) tambahan += 150;
+            if(document.getElementById('add-store').checked) tambahan += 200;
+            if(document.getElementById('add-18').checked) tambahan += 100;
+
+            // Deteksi Inrush Otomatis Sederhana
+            let biayaInrush = 0;
+            let statusInrush = "Tidak";
+            const deadlineVal = document.getElementById('input-deadline').value;
+            if(deadlineVal) {
+                const now = new Date();
+                const deadlineDate = new Date(deadlineVal);
+                const diffHours = (deadlineDate - now) / (1000 * 60 * 60);
+                if(diffHours > 0 && diffHours < 3 && jumlah < 3000) {
+                    biayaInrush = 500;
+                    statusInrush = "Ya (Under 3 Jam)";
+                } else if(diffHours > 0 && diffHours < 2 && jumlah < 3000) {
+                    biayaInrush = 1000;
+                    statusInrush = "Ya (Under 2 Jam)";
+                }
+            }
+
+            document.getElementById('badge-inrush').innerText = `Inrush: ${statusInrush}`;
+            document.getElementById('rincian-dasar').innerText = `${hargaDasar.toLocaleString('id-ID')}P`;
+            document.getElementById('rincian-tambahan').innerText = `${tambahan.toLocaleString('id-ID')}P`;
+            document.getElementById('rincian-inrush').innerText = `${biayaInrush.toLocaleString('id-ID')}P`;
+
+            let total = hargaDasar + tambahan + biayaInrush;
+            document.getElementById('rincian-total').innerText = `${total.toLocaleString('id-ID')}P`;
+
+            // Generate Format Otomatis
+            updateFormatTeks(hargaDasar + tambahan + biayaInrush, statusInrush);
+        }
+
+        // Update Format Pratinjau Teks
+        function updateFormatTeks(totalHarga, statusInrush) {
+            const namaList = document.getElementById('input-nama-list').value || '-';
+            const nomorCus = document.getElementById('input-nomor').value || '-';
+            const layanan = document.getElementById('input-layanan').value;
+            const jumlah = document.getElementById('input-jumlah').value || '0';
+            const hari = document.getElementById('input-hari').value || '1';
+            const sesi = parseInt(document.getElementById('input-sesi').value) || 1;
+            const screenshot = document.getElementById('input-screenshot').value;
+            const ket = document.getElementById('input-keterangan').value || '-';
+            const deadline = document.getElementById('input-deadline').value ? new Date(document.getElementById('input-deadline').value).toLocaleString('id-ID') : '-';
+
+            let sesiText = '';
+            for(let i=1; i<=sesi; i++) {
+                let m = document.getElementById(`mulai-${i}`) ? document.getElementById(`mulai-${i}`).value : '00.00';
+                let s = document.getElementById(`selesai-${i}`) ? document.getElementById(`selesai-${i}`).value : '00.00';
+                sesiText += `ꗃㅤ..ㅤSesi ${i} : ${m} — ${s} WIB\n`;
+            }
+
+            let addPoster = document.getElementById('add-poster').checked ? `*ꗃㅤ..ㅤList Poster\n` : '';
+            let addVideo = document.getElementById('add-video').checked ? `*ꗃㅤ..ㅤList Video\n` : '';
+            let addStore = document.getElementById('add-store').checked ? `*ꗃㅤ..ㅤList Store\n` : '';
+            let add18 = document.getElementById('add-18').checked ? `*ꗃㅤ..ㅤList 18+\n` : '';
+
+            let formatFinal = `*ㅤ𖤐ㅤㅤ..ㅤㅤ⎯⎯⎯⎯⎯⎯⎯เอ็กซ์ตราจอช*
+
+*ㅤㅤㅤ’🥊ㅤ)⎯⎯⎯FㅤOㅤRㅤMㅤAㅤT*
+ㅤㅤ⋆ㅤㅤ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ㅤㅤ ⋆
+
+ꗃㅤ..ㅤ⎯ isIntNama Customer : ${namaList}
+ꗃㅤ..ㅤ⎯ ⎯Nomor Customer : ${nomorCus}
+ꗃㅤ..ㅤ⎯ ⎯Pesanan : Jaseb ${layanan}
+ꗃㅤ..ㅤ⎯ ⎯Jumlah ${layanan} : ${jumlah}
+ꗃㅤ..ㅤ⎯ ⎯Berapa Hari : ${hari}
+ꗃㅤ..ㅤ⎯ ⎯Berapa Sesi : ${sesi}
+ꗃㅤ..ㅤ⎯ ⎯Screenshot : ${screenshot}
+ꗃㅤ..ㅤ⎯ ⎯Keterangan : ${ket}
+${addPoster}${addVideo}${addStore}${add18}ꗃㅤ..ㅤ⎯ ⎯Inrush : ${statusInrush.includes('Ya') ? 'Ya' : 'Tidak'}
+ꗃㅤ..ㅤ⎯ ⎯Deadline : ${deadline}
+${sesiText}`;
+
+            document.getElementById('output-format').innerText = formatFinal;
+        }
+
+        // Tombol Salin Format & Total
+        function salinFormat() {
+            const text = document.getElementById('output-format').innerText;
+            navigator.clipboard.writeText(text);
+            alert('Format pesanan berhasil disalin ke clipboard!');
+        }
+
+        function salinTotal() {
+            const total = document.getElementById('rincian-total').innerText;
+            navigator.clipboard.writeText(`Total Pembayaran: ${total}`);
+            alert('Total pembayaran berhasil disalin!');
+        }
+
+        function resetForm() {
+            document.getElementById('input-nama-list').value = '';
+            document.getElementById('input-nomor').value = '';
+            document.getElementById('input-jumlah').value = '100';
+            document.getElementById('input-hari').value = '1';
+            document.getElementById('input-sesi').value = '1';
+            document.getElementById('input-screenshot').value = 'Pendek';
+            document.getElementById('input-keterangan').value = '';
+            document.getElementById('input-deadline').value = '';
+            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            updateSesiFields();
+            hitungPesanan();
+        }
+
+        // Autentikasi Login Owner
+        function prosesLogin() {
+            const pin = document.getElementById('input-pin').value;
+            if(pin === 'admin123' || pin === 'owner') {
+                document.getElementById('login-error').classList.add('hidden');
+                switchPage('dashboard');
+            } else {
+                document.getElementById('login-error').classList.remove('hidden');
+            }
+        }
+
+        // Tab Dashboard Owner
+        function switchTabDashboard(tabName) {
+            document.querySelectorAll('.dash-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.dashboard-tab').forEach(el => {
+                el.classList.remove('bg-boxingRed', 'text-white');
+                el.classList.add('bg-navy', 'text-slate-300');
+            });
+            document.getElementById(`dash-${tabName}`).classList.remove('hidden');
+            event.target.classList.remove('bg-navy', 'text-slate-300');
+            event.target.classList.add('bg-boxingRed', 'text-white');
+            if(tabName === 'kasir-admin') renderAdminKasir();
+        }
+
+        function renderOwnerPesanan() {
+            const tbody = document.getElementById('table-owner-pesanan');
+            tbody.innerHTML = daftarPesanan.map(p => `
+                <tr class="hover:bg-navy/50 transition">
+                    <td class="p-3 font-semibold text-boxingRed">${p.id}</td>
+                    <td class="p-3">${p.customer}</td>
+                    <td class="p-3">Jaseb ${p.layanan}</td>
+                    <td class="p-3">${p.jumlah.toLocaleString('id-ID')}</td>
+                    <td class="p-3 font-bold text-white">${p.total.toLocaleString('id-ID')}P</td>
+                    <td class="p-3">${p.inrush}</td>
+                    <td class="p-3"><span class="bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded text-xs font-semibold">${p.status}</span></td>
+                </tr>
+            `).join('');
+        }
+
+        function renderAdminKasir() {
+            const container = document.getElementById('admin-kasir-list');
+            container.innerHTML = daftarKasir.map((k, index) => `
+                <div class="bg-navy p-4 rounded-xl border border-slate-800 flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-white">${k.nama}</h4>
+                        <p class="text-xs text-slate-400">WhatsApp: ${k.wa}</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <select onchange="ubahStatusKasir(${index}, this.value)" class="bg-navy-light border border-slate-700 text-xs rounded px-2 py-1 text-white">
+                            <option value="Open" ${k.status === 'Open' ? 'selected' : ''}>Open</option>
+                            <option value="Close" ${k.status === 'Close' ? 'selected' : ''}>Close</option>
+                        </select>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function ubahStatusKasir(index, status) {
+            daftarKasir[index].status = status;
+            renderAdminKasir();
+        }
+
+        // Inisialisasi awal saat halaman dimuat
+        window.onload = function() {
+            updateSesiFields();
+            hitungPesanan();
+            renderPriceListTables();
+            renderKasirPublic();
+        };
+    </script>
+</body>
+</html>
